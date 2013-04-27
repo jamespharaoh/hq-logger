@@ -15,7 +15,7 @@ class Logger
 
 	def initialize
 
-		require "hq/tools/logger/multi-logger"
+		require "hq/logger/multi-logger"
 
 		@multi_logger =
 			MultiLogger.new
@@ -125,20 +125,20 @@ class Logger
 			case format.to_sym
 
 				when :ansi
-					require "hq/tools/logger/ansi-logger"
-					HQ::Tools::Logger::AnsiLogger.new
+					require "hq/logger/ansi-logger"
+					AnsiLogger.new
 
 				when :html
-					require "hq/tools/logger/html-logger"
-					HQ::Tools::Logger::HtmlLogger.new
+					require "hq/logger/html-logger"
+					HtmlLogger.new
 
 				when :raw
-					require "hq/tools/logger/raw-logger"
-					HQ::Tools::Logger::RawLogger.new
+					require "hq/logger/raw-logger"
+					RawLogger.new
 
 				when :text
-					require "hq/tools/logger/text-logger"
-					HQ::Tools::Logger::TextLogger.new
+					require "hq/logger/text-logger"
+					TextLogger.new
 
 				else
 					raise "Error"
